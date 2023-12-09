@@ -1,0 +1,30 @@
+<section class="header">
+    <h1>Usuarios</h1>
+</section>
+
+<div class="table-responsive" *ngIf="data">
+    <table class="table table-sm table-success">
+        <thead>
+            <tr>
+                <th>Nombre de usuario</th>
+                <th>Fecha de nacimiento</th>
+                <th>Edad</th>
+                <th>Dirección</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let dato of data">
+                <td>{{dato.nombre}}</td>
+                <td>{{dato.fecha_nacimento | date:'dd/MM/yyyy'}}</td>
+                <td>{{dato.edad}}</td>
+                <td>{{dato.domicilio}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<section *ngIf="!data" class="error">
+    <h3>No hay información</h3>
+    <hr>
+</section>
